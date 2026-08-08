@@ -56,18 +56,17 @@ limpar a lista inteira? digite 4
         elif acao == 3:
             cursor.execute('''SELECT * FROM to_do_list''')
             tarefas = cursor.fetchall()
+            
             for tarefa in tarefas:
                 id, titulo, descricao, andamento_escrito = tarefa
                 andamento_escrito = 'em andamento' if andamento_tf == 1 else 'não começada'
-                if id is True:
-                    print(f'''Tarefa número {id}:
+
+                print(f'''Tarefa número {id}:
     Título - {titulo}
     Descrição - {descricao}
     Status - {andamento_escrito}
                 
 ''')
-                elif id is False:
-                    print('Lista vazia')
 
  
         elif acao == 4:
